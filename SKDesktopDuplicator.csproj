@@ -13,4 +13,10 @@
     <PackageReference Include="Vortice.DXGI" Version="2.1.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="Assets\**">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <SKShader Include="Assets/DesktopBlit.hlsl"/>
+  </ItemGroup>
 </Project>
