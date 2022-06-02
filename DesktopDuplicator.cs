@@ -12,24 +12,27 @@ namespace StereoKit.Framework
 		bool enabled = true;
 		public bool Enabled => enabled;
 
-		IDXGIOutputDuplication duplication;
-		Tex                    duplicationTex;
+		IDXGIOutputDuplication duplication = null;
+		Tex                    duplicationTex = null;
 		Vec2                   duplicationPointer;
-		Tex                    duplicationPointerTex;
+		Tex                    duplicationPointerTex = null;
 
-		Material desktopBlitMat;
-		Mesh     desktopMesh;
-		Tex      desktopTex;
-		Material desktopMaterial;
+		Material desktopBlitMat = null;
+		Mesh     desktopMesh = null;
+		Tex      desktopTex = null;
+		Material desktopMaterial = null;
 
-		Pose desktopPose       = new Pose(0, 0, -0.5f, Quat.LookDir(0, 0, 1));
-		Pose desktopPoseSmooth = new Pose(0, 0, -0.5f, Quat.LookDir(0, 0, 1));
+		Pose desktopPose;
+		Pose desktopPoseSmooth;
 		bool wasInteracting = false;
 
 		public Pose Pose { get => desktopPose; set => desktopPoseSmooth = desktopPose = value; }
 
 		public bool Initialize()
 		{
+			desktopPose       = new Pose(0, 0, -0.5f, Quat.LookDir(0, 0, 1));
+			desktopPoseSmooth = new Pose(0, 0, -0.5f, Quat.LookDir(0, 0, 1));
+
 			desktopMesh    = Mesh.GeneratePlane(Vec2.One, V.XYZ( 0,0,1 ), V.XYZ(0,1,0));
 			desktopTex     = new Tex(TexType.Rendertarget);
 			duplicationTex = new Tex();

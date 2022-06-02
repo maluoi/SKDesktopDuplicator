@@ -12,15 +12,18 @@ SamplerState source_s : register(s0);
 Texture2D    cursor   : register(t1);
 SamplerState cursor_s : register(s1);
 
-cbuffer GlobalBuffer : register(b1) {
-	float4x4 sk_view[2];
-	float4x4 sk_proj[2];
-	float4x4 sk_viewproj[2];
-	float3   sk_lighting_sh[9];
-	float4   sk_camera_pos[2];
-	float4   sk_camera_dir[2];
-	float4   sk_fingertip[2];
+cbuffer StereoKitBuffer : register(b1) {
+	float4x4 sk_view       [2];
+	float4x4 sk_proj       [2];
+	float4x4 sk_proj_inv   [2];
+	float4x4 sk_viewproj   [2];
+	float4   sk_lighting_sh[9];
+	float4   sk_camera_pos [2];
+	float4   sk_camera_dir [2];
+	float4   sk_fingertip  [2];
+	float4   sk_cubemap_i;
 	float    sk_time;
+	uint     sk_view_count;
 };
 cbuffer TransformBuffer : register(b2) {
 	float sk_width;
