@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "Run": {
+      "commandName": "Project"
+    },
+    "Run - Holographic Remoting": {
+      "commandName": "Project",
+      "commandLineArgs": "-remote"
+    }
+  }
+}

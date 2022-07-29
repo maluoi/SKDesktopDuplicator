@@ -7,7 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="StereoKit" Version="0.3.6" />
+    <PackageReference Include="StereoKit" Version="0.3.7-preview.2" />
+    <PackageReference Include="StereoKit.HolographicRemoting" Version="0.9.5" />
     <PackageReference Include="Vortice.Direct3D11" Version="2.1.2" />
     <PackageReference Include="Vortice.DXGI" Version="2.1.2" />
   </ItemGroup>
@@ -16,6 +17,6 @@
     <None Include="Assets\**">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <SKShader Include="Assets/DesktopBlit.hlsl"/>
+    <SKShader Include="Assets/DesktopBlit.hlsl" />
   </ItemGroup>
 </Project>
